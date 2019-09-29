@@ -15,7 +15,7 @@ app.use(
 app.post('/', function(req, res) {
   const message = req.body.message
 
-  if (!message || message.text.toLowerCase().indexOf('hi') < 0) {
+  if (!message || message.text.toLowerCase().indexOf('<desired user input>') < 0) {
     // In case a message is not present, or if our message does not have the word hi in it, do nothing and return an empty response
     return res.end()
   }
@@ -26,7 +26,7 @@ app.post('/', function(req, res) {
       'https://api.telegram.org/bot<your api key, removed for privacy>/sendMessage',
       {
         chat_id: message.chat.id,
-        text: 'Hello!!'
+        text: '<desired bot output>'
       }
     )
     .then(response => {
